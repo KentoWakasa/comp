@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+
+  scope module: :public do
+    get 'post_images/new'
+    post 'post_images' => 'post_images#create'
+    get 'post_images/index'
+    get 'post_images/show'
+    get 'post_images/edit'
+  end
+
   devise_for :admin, skip: [:registrations, :passwords], controller: {
     sessions: "admin/sessions"
   }
