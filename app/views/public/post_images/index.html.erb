@@ -1,2 +1,19 @@
-<h1>Public::PostImages#index</h1>
-<p>Find me in app/views/public/post_images/index.html.erb</p>
+<h1>image_index</h1>
+
+<% @post_image.each do |post_image| %>
+
+<p>image</p>
+<% if post_image.image.attached? %>
+  <%= image_tag post_image.image, size: '100x100' %>
+<% else %>
+  <%= image_tag 'ふけんこう法師.jpg', size: '100x100' %>
+<% end %>
+<p>title</p>
+<%= post_image.title %>
+<p>body</p>
+<%= post_image.body %>
+
+<%= link_to "編集", edit_post_image_path(post_image) %>
+<%= link_to "削除", destroy_post_image_path(post_image), method: :delete, "data-confirm" => "really?" %>
+
+<% end %>
