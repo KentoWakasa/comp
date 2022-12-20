@@ -1,0 +1,9 @@
+<h1>image_show</h1>
+<p>image</p>
+<%#= image_tag post_image.image, size: "100×100" %>
+<p>title</p>
+<%= @post_image.title %>
+<p>body</p>
+<%= @post_image.body %>
+
+<%= link_to "編集", edit_post_image_path(@post_image) %>
